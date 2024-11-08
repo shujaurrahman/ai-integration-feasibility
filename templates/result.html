@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans antialiased">
+
+    <div class="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-lg mt-12">
+
+        <!-- Title -->
+        <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">AI Integration Prediction Result</h1>
+
+        <!-- Prediction Result -->
+        <div class="bg-blue-100 p-6 mb-6 rounded-lg">
+            <h2 class="text-xl font-semibold text-blue-700 mb-2">Prediction Outcome</h2>
+            <p class="text-gray-700">{{ result }}</p>
+        </div>
+
+
+        <!-- Key Points Section -->
+        <div class="bg-green-50 p-6 mb-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-green-700 mb-3">Key Points from the Analysis</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong>Business Type:</strong> {{ business_type }}</li>
+                <li><strong>Annual Revenue:</strong> {{ annual_revenue }}</li>
+                <li><strong>Employee Count:</strong> {{ employee_count }}</li>
+                <li><strong>Current Tech Investment:</strong> {{ current_tech_investment }}</li>
+                <li><strong>Customer Satisfaction:</strong> {{ customer_satisfaction }}</li>
+                <li><strong>Operational Efficiency:</strong> {{ operational_efficiency }}</li>
+                <li><strong>Workforce Skill Level:</strong> {{ workforce_skill_level }}</li>
+                <li><strong>AI Integration Cost:</strong> {{ ai_integration_cost }}</li>
+                <li><strong>Potential Improvement:</strong> {{ potential_improvement }}</li>
+                <li><strong>Complexity Level:</strong> {{ complexity_level }}</li>
+                <li><strong>Data Availability:</strong> {{ data_availability }}</li>
+            </ul>
+            </ul>
+        </div>
+
+        <!-- Suggestions Section -->
+        <div class="bg-yellow-50 p-6 mb-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-yellow-700 mb-3">Suggestions for Improvement</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Consider adopting AI solutions for improving patient management, diagnostics, and automation in healthcare processes.</li>
+                <li>AI can help reduce operational costs and improve the quality of service by enhancing decision-making with data-driven insights.</li>
+                <li>Since data availability is currently poor, focus on improving data collection, management, and quality before proceeding with AI integration.</li>
+                <li>Given the high AI integration cost, start with smaller, scalable AI projects that can provide quick wins before committing large resources.</li>
+                <li>Enhance the technical skill set of your workforce to ensure smooth implementation and adoption of AI technologies.</li>
+            </ul>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center">
+            <a href="/" class="text-blue-600 hover:text-blue-800 font-semibold text-lg">Go back to home</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

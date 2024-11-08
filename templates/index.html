@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Integration Prediction</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-3xl">
+        <h2 class="text-3xl font-semibold text-center text-gray-700 mb-6">AI Integration Feasibility Prediction</h2>
+        <form action="/predict" method="POST">
+            <!-- Business Type (Categorical) -->
+            <div class="mb-4">
+                <label for="business_type" class="block text-gray-700 font-semibold">Business Type:</label>
+                <select name="business_type" id="business_type" class="w-full p-2 border rounded-md shadow-sm" required>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Retail">Retail</option>
+                </select>
+                <p class="text-sm text-gray-500 mt-1">Example: Select "Healthcare", "Finance", or "Retail". This field represents the type of your business.</p>
+            </div>
+
+            <!-- Annual Revenue (Numerical) -->
+            <div class="mb-4">
+                <label for="annual_revenue" class="block text-gray-700 font-semibold">Annual Revenue (in currency):</label>
+                <input type="number" name="annual_revenue" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 696954173.05 (your annual revenue in your business currency).</p>
+            </div>
+
+            <!-- Employee Count (Numerical) -->
+            <div class="mb-4">
+                <label for="employee_count" class="block text-gray-700 font-semibold">Employee Count:</label>
+                <input type="number" name="employee_count" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 457 (Total number of employees in your business).</p>
+            </div>
+
+            <!-- Current Tech Investment (Numerical) -->
+            <div class="mb-4">
+                <label for="current_tech_investment" class="block text-gray-700 font-semibold">Current Tech Investment (in currency):</label>
+                <input type="number" name="current_tech_investment" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 7055150.97 (the amount invested in technology within your business).</p>
+            </div>
+
+            <!-- Customer Satisfaction (Numerical) -->
+            <div class="mb-4">
+                <label for="customer_satisfaction" class="block text-gray-700 font-semibold">Customer Satisfaction (Scale: 0-10):</label>
+                <input type="number" name="customer_satisfaction" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 2.87 (Satisfaction of your customers, on a scale from 0 to 10).</p>
+            </div>
+
+            <!-- Operational Efficiency (Numerical) -->
+            <div class="mb-4">
+                <label for="operational_efficiency" class="block text-gray-700 font-semibold">Operational Efficiency (Scale: 0-1):</label>
+                <input type="number" name="operational_efficiency" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 0.91 (Your business operational efficiency score, on a scale from 0 to 1).</p>
+            </div>
+
+            <!-- Complexity Level (Categorical) -->
+            <div class="mb-4">
+                <label for="complexity_level" class="block text-gray-700 font-semibold">Complexity Level:</label>
+                <select name="complexity_level" id="complexity_level" class="w-full p-2 border rounded-md shadow-sm" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <p class="text-sm text-gray-500 mt-1">Example: Select "Low", "Medium", or "High" based on the complexity of your business operations.</p>
+            </div>
+
+            <!-- Data Availability (Categorical) -->
+            <div class="mb-4">
+                <label for="data_availability" class="block text-gray-700 font-semibold">Data Availability:</label>
+                <select name="data_availability" id="data_availability" class="w-full p-2 border rounded-md shadow-sm" required>
+                    <option value="Poor">Poor</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Good">Good</option>
+                    <option value="Rich">Rich</option>
+                </select>
+                <p class="text-sm text-gray-500 mt-1">Example: Select "Poor", "Moderate", "Good", or "Rich" based on the availability of data in your business.</p>
+            </div>
+
+            <!-- Potential Improvement (Numerical) -->
+            <div class="mb-4">
+                <label for="potential_improvement" class="block text-gray-700 font-semibold">Potential Improvement (Scale: 0-1):</label>
+                <input type="number" name="potential_improvement" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 9.72 (Potential improvement expected from AI integration, on a scale from 0 to 1).</p>
+            </div>
+
+            <!-- AI Integration Cost (Numerical) -->
+            <div class="mb-4">
+                <label for="ai_integration_cost" class="block text-gray-700 font-semibold">AI Integration Cost (in currency):</label>
+                <input type="number" name="ai_integration_cost" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 1380101.15 (the estimated cost to integrate AI in your business).</p>
+            </div>
+
+            <!-- Workforce Skill Level (Numerical) -->
+            <div class="mb-6">
+                <label for="workforce_skill_level" class="block text-gray-700 font-semibold">Workforce Skill Level (Scale: 0-10):</label>
+                <input type="number" name="workforce_skill_level" step="any" class="w-full p-2 border rounded-md shadow-sm" required>
+                <p class="text-sm text-gray-500 mt-1">Example: 0.02 (The current skill level of your workforce, on a scale from 0 to 10).</p>
+            </div>
+
+            <button type="submit" class="w-full p-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
